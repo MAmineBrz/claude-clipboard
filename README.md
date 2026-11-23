@@ -1,13 +1,25 @@
 # Claude Clipboard
 
-Deux modes, la réponse de Claude arrive dans le presse-papiers (et dans l'historique **Win+V**) :
+Un petit outil Windows qui envoie ta **sélection de texte** ou une **capture d'écran** à l'API Claude via un raccourci clavier, et dépose la réponse dans le presse-papiers (visible dans l'historique **Win+V**, prête à coller).
 
-| Mode  | Action                                              |
-|-------|-----------------------------------------------------|
-| Texte | Sélectionne du texte n'importe où → **Ctrl+Shift+C** |
+Pensé au départ pour répondre à des QCM de révision, mais le comportement se règle via un simple prompt système.
+
+## Fonctionnalités
+
+| Mode  | Action                                                             |
+|-------|--------------------------------------------------------------------|
+| Texte | Sélectionne du texte n'importe où → **Ctrl+Shift+C**               |
 | Image | **Impr écran** → sélectionne la zone → **Ctrl+Shift+S** → **Win+V** |
 
-Les deux modes utilisent le même `SYSTEM_PROMPT`. Une seule requête tourne à la fois.
+- Réponse directement dans le presse-papiers et l'historique **Win+V**.
+- Les deux modes utilisent le même `SYSTEM_PROMPT`.
+- Une seule requête à la fois, gestion d'erreurs claire, réessais automatiques en cas de souci réseau.
+
+## Prérequis
+
+- **Windows** (le script utilise le presse-papiers Windows ; il ne tourne pas sous WSL).
+- **Python 3.9+**
+- Une **clé API Anthropic** avec du crédit → https://platform.claude.com/settings/keys
 
 ## Installation (PowerShell Windows, pas WSL)
 
