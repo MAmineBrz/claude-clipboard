@@ -1,0 +1,5 @@
+anthropic
+python-dotenv
+pyperclip
+keyboard
+pillow
